@@ -1,0 +1,20 @@
+<mat-toolbar ngClass.xs="mobile" *ngIf="isVisible">
+    <div><img class="logo" src="../../../../assets/logo-dark.png" alt=""></div>
+    <div fxFlex fxHide.xs fxLayout fxLayoutAlign="center center" fxLayoutGap="10px">
+        <a routerLink="/" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{'exact':'true'}">Home</a>
+        <a routerLink="/analyze" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{'exact':'true'}">Demo</a>
+        <!--<a>About</a>
+        <a>Portfolio</a>
+        <a>Contact</a>-->
+    </div>
+    <div fxLayoutAlign="end" fxHide.xs>
+        <a class="social" href="https://www.facebook.com/aiartist.io/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a class="social" href="https://www.linkedin.com/company/aiartist/" target="_blank"><i
+            class="fab fa-linkedin-in"></i></a>
+    </div>
+    <div fxFlex fxLayoutAlign="end" fxHide.gt-xs>
+        <button mat-icon-button (click)="toggleSidenav()">
+            <mat-icon>menu</mat-icon>
+        </button>
+    </div>
+</mat-toolbar>

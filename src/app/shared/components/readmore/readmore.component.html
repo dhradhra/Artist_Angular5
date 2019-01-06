@@ -1,0 +1,6 @@
+<div [class.collapsed]="isCollapsed">
+    <ng-content></ng-content>
+</div>
+<button mat-button color="primary" (click)="isCollapsed =! isCollapsed">
+    {{ isCollapsed ? 'Read more' : 'Read less' }}
+</button>

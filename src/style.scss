@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/icon?family=Montserrat:400,700');
+@import url('https://fonts.googleapis.com/css?family=Lato:100,200,300,400,500,600,800,700,900');
+@import 'variables';
+@import 'reset';
+@import '~@angular/material/theming';
+@import 'flexbin';
+
+@include mat-core();
+
+$app-primary: mat-palette($mat-light-blue);
+$app-accent: mat-palette($mat-teal, 500);
+$app-theme: mat-light-theme($app-primary, $app-accent);
+
+// Include the default theme styles
+@include angular-material-theme($app-theme);
+
+* {
+    font-family: 'Lato', sans-serif;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.float-left {
+    float: left;
+}
+
+.float-right {
+    float: right;
+}
+
+.header {
+    margin: 5px 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #212121;
+}
+
+.mt10 {
+    margin-top: 10px;
+}
+
+.mt15 {
+    margin-top: 15px;
+}
+
+.mt20 {
+    margin-top: 20px;
+}
+
+.ml10 {
+    margin-left: 10px;
+}
+
+.ml20 {
+    margin-left: 20px;
+}
+
+.mr10 {
+    margin-right: 10px;
+}
+
+.mr20 {
+    margin-right: 20px;
+}
+
+.mb10 {
+    margin-bottom: 10px;
+}
+
+.mb15 {
+    margin-bottom: 15px;
+}
+
+.mb20 {
+    margin-bottom: 20px;
+}
+
+/* Custom Arrow */
+
+.thumbnail-slider > .border-active + div {
+    position: absolute;
+    width: 46px;
+    height: 50px;
+    bottom: 14px;
+    background-color: rgba(0, 0, 0, 0.2);
+    left: 47%;
+    cursor: pointer;
+}
+.thumbnail-slider > .border-active + div:before {
+    content: '<';
+    color: #fff;
+    font-size: 37px;
+}
+.thumbnail-slider > .border-active + div + div {
+    position: absolute;
+    width: 46px;
+    height: 50px;
+    bottom: 14px;
+    background-color: rgba(0, 0, 0, 0.2);
+    left: auto;
+    right: 45%;
+    cursor: pointer;
+}
+.thumbnail-slider > .border-active + div + div:before {
+    content: '>';
+    color: #fff;
+    font-size: 37px;
+}
+.mat-form-field-underline {
+    height: 2px !important;
+}
+.font-size-increase {
+    font-size: 18px;
+}
+.example-full-width {
+    width: 100%;
+    max-width: 300px;
+}

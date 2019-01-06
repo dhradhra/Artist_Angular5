@@ -1,0 +1,170 @@
+/* http://www.menucool.com/jquery-slider */
+
+.thumbnail-slider {
+    margin:0 auto; /*center-aligned*/
+    width:100%;/*width:400px;*/
+    padding:4px 40px;/*Gives room for arrow buttons*/
+    box-sizing:border-box;
+    position:relative;
+    -webkit-user-select: none;
+    user-select:none;
+}
+
+.thumbnail-slider div.inner {
+    /*border:4px solid rgba(0,0,0,0.3);*/
+    background-color:transparent;
+
+    /*the followings should not be changed */
+    position:relative;
+    overflow:hidden;
+    padding:2px 0;
+    margin:0;
+}
+
+ 
+.thumbnail-slider div.inner ul {
+    
+    /*the followings should not be changed */
+    white-space:nowrap;
+    position:relative;
+    left:0; top:0;
+    list-style:none;
+    font-size:0;
+    padding:0;
+    margin:0;
+    float:left!important;
+    width:100%!important;
+    height:auto!important;
+}
+
+.thumbnail-slider ul li {
+     opacity:0.75;
+    display:inline-block;
+    *display:inline!important; /*IE7 hack*/
+
+    /* margin:0 4px; */
+    transition:border-color 0.5s;
+    box-sizing:content-box;
+    
+    text-align:center;
+    vertical-align:middle;
+    padding:0;
+    position:relative;
+    list-style:none;
+    backface-visibility:hidden;
+}
+
+.thumbnail-slider ul li.active {
+    opacity:1;
+}
+
+    /* .thumbnail-slider ul li:after {
+        content:"ENLARGE";
+        display:block;
+        position:absolute;
+        top:7px;
+        right:8px;
+        font:bold 9px/18px Arial;
+        color:white;
+        width:60px;
+        height:18px;
+        border:1px solid rgba(255,255,255,0.4);
+        background-color:rgba(0,0,0,0.5);
+        z-index:2;
+        cursor:pointer;        
+        text-align:center;
+    } */
+    .thumbnail-slider ul li.active:after {
+        font-size:10px;
+        background-color:#C00;
+    }
+
+.thumbnail-slider li:hover {
+    opacity:0.8;
+}
+
+
+.thumbnail-slider .thumb {
+    width:100%;
+    height: 95%;
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-position:center center;
+    display:block;
+    position:absolute;
+    font-size:0;
+}
+
+/* --------- navigation controls ------- */
+/* The nav id should be: slider id + ("-prev", "-next", and "-pause-play") */
+
+#thumbnail-slider-pause-play {display:none;} /*.pause*/
+
+
+
+
+
+.thumbnail-slider {
+    margin: 0 auto;
+    width: 100%;
+    /* width: 400px; */
+    padding: 38px 40px 131px;
+    box-sizing: border-box;
+    position: relative;
+    -webkit-user-select: none;
+    user-select: none;
+}
+.slider-bg {
+    background: #009688;
+}
+.border-active {
+    border-top: 14px solid #fff;
+    border-left: 14px solid #fff;
+    border-right: 14px solid #fff;
+    border-bottom: 10px solid #fff;
+    max-width: 247px;
+    width: 100%;
+    height: 240px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: 42.1%;
+    transform: translate(0,-50%);
+    box-shadow: 10px 10px 15px #333;
+}
+.thumbnail-slider ul li .thumb-caption {
+    display: block;
+    position: absolute;
+    top: 7px;
+    right: 8px;
+    font: bold 17px/21px Arial;
+    color: white;
+    width: auto;
+    height: 23px;
+    border: 1px solid rgba(255,255,255,0.4);
+    background-color: rgba(0,0,0,0.5);
+    z-index: 2;
+    cursor: pointer;
+    text-align: center;
+    padding: 0 20px;
+    }
+    .thumbnail-slider ul li.active .thumb-caption {
+        background-color: #ff0000cf;
+    }
+    .thumbnail-slider ul li .thumb-caption  h6 {
+        margin: 0;
+        text-align: center;
+    }
+/*Responsive settings*/
+@media only screen and (max-width:736px){
+    
+    .thumbnail-slider {
+        padding:0;
+    }
+
+    .thumbnail-slider-prev, .thumbnail-slider-next {
+        display:none;
+    }
+}

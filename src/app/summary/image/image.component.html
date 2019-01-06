@@ -1,0 +1,157 @@
+<p *ngIf="content.image_links?.length && !content.stylized?.selected" class="message">
+    *Please select an image to proceed
+</p>
+<p *ngIf="content.image_links?.length && content.stylized?.selected" class="message">
+    *Apply style from the bottom slider
+</p>
+<hr>
+
+<div class="flexbin flexbin-margin" *ngIf="!content.stylized?.selected">
+    <a href="javascipt:void(0)" *ngFor="let i of content.image_links" (click)="select(i)" [ngClass]="{ 'selected': content.stylized?.selected === i }">
+        <img [src]="i.thumbnail" />
+    </a>
+</div>
+
+<div *ngIf="content.stylized?.selected" class="text-center selected">
+    <div class="text-left options">
+        <!-- <mat-form-field class="mr20">
+            <mat-select placeholder="Select Style" [(value)]="style">
+                <mat-option *ngFor="let s of styles" [value]="s.value">
+                    {{ s.name }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" class="button--apply"
+                *ngIf="style && content.stylized?.style !== style"
+                (click)="stylize()">
+                            Apply
+        </button> -->
+        <div class="two-btn">
+            <button mat-raised-button color="accent" class="button--back float-right" (click)="unselect()">
+                <mat-icon>arrow_back</mat-icon>
+                Back to Images
+            </button>
+
+            <button mat-raised-button color="warn" class="button--clear float-right" *ngIf="content.stylized?.style" (click)="clear(childMessage)">Clear Style
+            </button>
+        </div>
+    </div>
+    <img [src]="content.stylized?.selected.full" *ngIf="!content.stylized?.image" />
+
+    <div class="show-slider-img">
+        <img [src]="content.stylized.image" *ngIf="content.stylized?.image" />
+    </div>
+
+    <div class="slider-bg">
+        <div id="thumbnail-slider-{{childMessage}}" class="thumbnail-slider">
+            <div class="inner">
+                <ul id="list-{{childMessage}}">
+                    <li id="original">
+                        <div class="thumb-caption">
+                            <h6>Original</h6>
+                        </div>
+                        <a class="thumb" href="assets/img/9.jpg"></a>
+                    </li>
+                    <li id="blue_granite">
+                        <div class="thumb-caption">
+                            <h6>Blue Granite</h6>
+                        </div>
+                        <a class="thumb" href="assets/img/1.jpg"></a>
+                    </li>
+                    <li id="bright_sand">
+                        <div class="thumb-caption">
+                            <h6>Bright Sand</h6>
+                        </div>
+                        <a class="thumb" href="assets/img/2.jpg"></a>
+                    </li>
+                    <li id="cinnamon_rolls">
+                        <div class="thumb-caption">
+                            <h6>Cinnamon Rolls</h6>
+                        </div>
+                        <a class="thumb" href="assets/img/3.jpg"></a>
+                    </li>
+                    <li id="crafty_painting">
+                        <div class="thumb-caption">
+                            <h6>Crafty Painting</h6>
+                        </div>
+                        <a class="thumb" href="assets/img/4.jpg"></a>
+                    </li>
+                    <li id="creativity">
+                        <div class="thumb-caption">
+                            <h6>Creativity</h6>
+                        </div>
+                        <a class="thumb" href="assets/img/5.jpg"></a>
+                    </li>
+                    <li id="dark_soul">
+                        <div class="thumb-caption">
+                            <h6>Dark Soul</h6>
+                        </div>
+                        <a class="thumb" href="assets/img/6.jpg"></a>
+                    </li>
+                    <li id="gan_vogh">
+                        <div class="thumb-caption">
+                            <h6>Gan Vogh</h6>
+                        </div>
+                        <a class="thumb" href="assets/img/7.jpg"></a>
+                    </li>
+                    <li id="oily_mcoilface">
+                        <div class="thumb-caption">
+                            <h6>Oily Mcoilface</h6>
+                        </div>
+                        <a class="thumb" href="assets/img/8.jpg"></a>
+                    </li>
+
+                    <li id="post_modern">
+                        <div class="thumb-caption">
+                            <h6>Post Modern</h6>
+                        </div>
+                        <a class="thumb" href="assets/img/10.jpg"></a>
+                    </li>
+                    <li id="dark_rain">
+                        <div class="thumb-caption">
+                            <h6>Purple Bond</h6>
+                        </div>
+                        <a class="thumb" href="assets/img/11.jpg"></a>
+                    </li>
+                    <li id="purple_storm">
+                        <div class="thumb-caption">
+                            <h6>Purple Storm</h6>
+                        </div>
+                        <a class="thumb" href="assets/img/12.jpg"></a>
+                    </li>
+                    <li id="smooth_ride">
+                        <div class="thumb-caption">
+                            <h6>Smooth Ride</h6>
+                        </div>
+                        <a class="thumb" href="assets/img/13.jpg"></a>
+                    </li>
+                    <li id="spagetti_accident">
+                        <div class="thumb-caption">
+                            <h6>Spagetti Accident</h6>
+                        </div>
+                        <a class="thumb" href="assets/img/14.jpg"></a>
+                    </li>
+                    <li id="sunday">
+                        <div class="thumb-caption">
+                            <h6>Sunday</h6>
+                        </div>
+                        <a class="thumb" href="assets/img/15.jpg"></a>
+                    </li>
+                    <li id="yellow_collage">
+                        <div class="thumb-caption">
+                            <h6>Yellow Collage</h6>
+                        </div>
+                        <a class="thumb" href="assets/img/16.jpg"></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="border-active">
+                <div class="upload-photo" (click)="selectFilter(childMessage)">
+                    <img src="assets/img/arrow-upload.png" />
+                    <h4>Use This Style</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,164 @@
+<div class="landing"> 
+<!-- Nav start here -->
+<div id="main">
+   
+
+    <!-- Nav end here -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top ">
+    <a class="navbar-brand" href="#">
+        <img class="img-fluid" src="assets/img/index-images/logo-dark.png" />
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample07" aria-controls="navbarsExample07"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarsExample07">
+        <ul class="navbar-nav mx-auto">
+            <li class="nav-item">
+                <a class="nav-link " href="#" [ngx-scroll-to]="'home'" data-scroll="home">Home
+                    <span class="sr-only">(current)</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" [ngx-scroll-to]="'about'" data-scroll="about">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" [ngx-scroll-to]="'portfolio'" data-scroll="portfolio" >Portfolio</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" [ngx-scroll-to]="'contact'" data-scroll="contact">Contact</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/analyze" href="#" [routerLinkActive]="'active'" data-scroll="contact" [routerLinkActiveOptions]="{'exact':'true'}">Demo</a>
+                  
+            </li>
+        </ul>
+    </div>
+    <span class="open" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#"  data-scroll="home">Home</a>
+        <a href="#" data-scroll="about">About</a>
+        <a href="#" data-scroll="portfolio">Portfolio</a>
+        <a href="#" data-scroll="contact">Contact</a>
+    </div>
+</nav>
+    <!-- Banner start here  -->
+
+    <div class="jumbotron">
+        <div class="container">
+            <section class="home-sect" id="home" data-anchor="home">
+                <div class="container">
+                    <figcaption class="caption">
+                        <h1>AiArtist</h1>
+                        <p class="black-text">An Artificial Intelegence artist to illustrate your stories</p>
+                    </figcaption>
+                </div>
+            </section>
+        </div>
+        <div class="container">
+            <section class="about-sec border-radius" id="about" data-anchor="about">
+                <div class="container">
+                    <div class="about-logo">
+                        <img class="img-fluid" src="assets/img/index-images/logo-head.png" />
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                            <div class="about-widget">
+                                <div class="about-icon">
+                                    <img class="img-fluid" src="assets/img/index-images/file-2.png" />
+                                </div>
+                                <h6>Summarize</h6>
+                                <p>Whether you are a seasoned writer or a casual blogger, our AI summarizes and understands
+                                    the content that you have written.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                            <div class="about-widget">
+                                <div class="about-icon">
+                                    <img class="img-fluid" src="assets/img/index-images/picture-2.png" />
+                                </div>
+                                <h6>Illustrate</h6>
+                                <p>We believe a great story needs equally great illustrations to bring your vision into life.
+                                    Our AI generates illustrations all on its own making your story more compelling.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                            <div class="about-widget">
+                                <div class="about-icon">
+                                    <img class="img-fluid" src="assets/img/index-images/paint-palette-2.png" />
+                                </div>
+                                <h6>Stylize</h6>
+                                <p>Our AI is no ordinary artist. Tell it to illustrate your story with your favourite artist’s
+                                    style and it learns to do so.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="container">
+            <section class="gallary background-black" id="portfolio" data-anchor="portfolio">
+                <h2 class="color-white">Gallery</h2>
+                <hr>
+                <div class="row">
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-12 right-padding">
+                        <div class="gallary-img">
+                            <img class="img-fluid" src="assets/img/index-images/1.jpg" />
+                        </div>
+                        <div class="gallary-img">
+                            <img class="img-fluid" src="assets/img/index-images/3.jpg" />
+                        </div>
+                        <div class="gallary-img">
+                            <img class="img-fluid" src="assets/img/index-images/5.jpg" />
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-12 right-padding">
+                        <div class="gallary-img">
+                            <img class="img-fluid" src="assets/img/index-images/7.jpg" />
+                        </div>
+                        <div class="gallary-img">
+                            <img class="img-fluid" src="assets/img/index-images/13.jpg" />
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-12 right-padding">
+                        <div class="gallary-img">
+                            <img class="img-fluid" src="assets/img/index-images/2.jpg" />
+                        </div>
+                        <div class="gallary-img">
+                            <img class="img-fluid" src="assets/img/index-images/4.jpg" />
+                        </div>
+                        <div class="gallary-img">
+                            <img class="img-fluid" src="assets/img/index-images/6.jpg" />
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="container">
+            <section class="contact top-border-radius" id="contact" data-anchor="contact">
+                <div class="container">
+                    <h2>Contact Us</h2>
+                    <hr>
+                    <div class="social">
+                        <a href="https://www.facebook.com/aiartist.io/" target="_blank">
+                            <span>Facebook</span>
+                            <img src="assets/img/index-images/facebook.png" />
+                        </a>
+                        <a href="https://m.me/aiartist.io" target="_blank">
+                            <span>Facebook Messenger</span>
+                            <img src="assets/img/index-images/facebook-messanger.png" />
+                        </a>
+                        <a href="https://www.linkedin.com/company/aiartist/" target="_blank">
+                            <span>Linkedin</span>
+                            <img src="assets/img/index-images/linkedin.png" />
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <!-- Banner end here  -->
+
+</div>
+</div>

@@ -1,0 +1,76 @@
+<div class="container">
+
+  <div class="actions-bar">
+    <mat-paginator ngClass.xs="mat-paginator-mobile-view" [length]="(contents | async).length" [pageSize]="1" (page)="paginate($event)"
+      *ngIf="mode === 'edit'"></mat-paginator>
+
+    <button mat-raised-button *ngIf="mode != 'edit'" color="primary" class="button--mode float-right disabled"  (click)="download()">
+      Download
+    </button>
+    <button mat-raised-button color="primary" class="button--mode float-right disabled" [disabled]="disableView" (click)="toggleMode()">
+      {{ mode === 'edit' ? 'View' : 'Edit' }} Article
+    </button>
+  </div>
+
+  <div class="content-container" *ngIf="contents | async">
+    <div class="mode--edit" *ngIf="mode === 'edit'">
+      <swiper [config]="config" #swiper>
+        <div class="swiper-wrapper">
+          <div *ngFor="let content of contents | async;let ind=index" class="content swiper-slide" style="margin-right:0!important;">
+            <app-read-more>
+              <p class="text">{{ content.content }}</p>
+            </app-read-more>
+
+            <div class="top-margin" >
+              <div *ngIf="!content.stylized?.selected">
+              <mat-form-field class="example-full-width font-size-increase">
+                <div (click)="test(ind)" class="animated-search-box" id="dvspansearch{{ind}}">
+                  <span #spanserach id="typed{{ind}}"></span>
+                </div>
+                <input (click)="test(ind,inputsearch)" matInput #inputsearch (keyup.enter)="search(inputsearch.value)" [(ngModel)]="content.search"
+                />
+              </mat-form-field>
+              <button mat-button (click)="search(inputsearch.value)" class="btn btn-succes">Search your own phrase</button>
+            </div>
+          </div>
+            <!-- <hr> -->
+            <mat-form-field class="tags" style="display: none;">
+              <mat-chip-list #chipList>
+                <mat-chip *ngFor="let tag of content.tags" color="primary" selected="true" [removable]="removable" (remove)="removeTag(tag)">
+                  {{ tag }}
+                  <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+                </mat-chip>
+                <input placeholder="Tags" [matChipInputFor]="chipList" [matChipInputSeparatorKeyCodes]="separatorKeysCodes" [matChipInputAddOnBlur]="addOnBlur"
+                  (matChipInputTokenEnd)="addTag($event)" [disabled]="content.tags.length >= 1" />
+                <button (click)="removeTagAllTag()" *ngIf="!content.stylized?.selected && (content.tags.length > 0)" class="btn btn-succes">Clear Tags</button>
+              </mat-chip-list>
+            </mat-form-field>
+
+            <app-image [content]="content" [childMessage]="ind"></app-image>
+          </div>
+        </div>
+      </swiper>
+    </div>
+
+    <div class="mode--view mt20" *ngIf="mode === 'view'">
+      <div *ngFor="let content of contents | async" class="content">
+        <p class="text">{{ content.content }}</p>
+
+        <!--<mat-chip-list>
+                    <mat-chip *ngFor="let tag of content.tags" color="primary" selected="true">
+                        {{ tag }}
+                    </mat-chip>
+                </mat-chip-list>-->
+
+        <div class="text-center mb10">
+          <img [src]="content.stylized?.selected.full" *ngIf="!content.stylized?.image && content.stylized?.selected" />
+          <img [src]="content.stylized.image" *ngIf="content.stylized?.image" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--<div *ngIf="!(contents | async)" class="text-center mt15">
+        Oops! Looks like you've forgot to add some text to Analyze
+    </div>-->
+</div>

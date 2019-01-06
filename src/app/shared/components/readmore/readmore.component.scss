@@ -1,0 +1,12 @@
+.collapsed {
+    height: 4.5em;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+button {
+    float: right;
+    padding: 0;
+}

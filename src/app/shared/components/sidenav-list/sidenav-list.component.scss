@@ -1,0 +1,16 @@
+@import 'variables';
+
+mat-nav-list {
+    a {
+        color: $secondary;
+        &:hover {
+            color: $primary;
+        }
+    }
+    .nav-caption {
+        padding: 0 0 0 10px;
+    }
+    .active {
+        color: $primary;
+    }
+}

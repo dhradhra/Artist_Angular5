@@ -1,0 +1,40 @@
+<div class="container text-center">
+
+    <h3 class="header">Title</h3>
+    <mat-form-field class="header" > 
+        <input  matInput  [(ngModel)]="title"  placeholder="Enter your title..." matTextareaAutosize
+                  matAutosizeMinRows="1">
+    </mat-form-field>
+
+    <mat-form-field>
+        <textarea matInput [(ngModel)]="text" id="about" placeholder="Enter your story..." matTextareaAutosize
+                  matAutosizeMinRows="1"></textarea>
+    </mat-form-field>
+
+    <div class="float-right-button">
+      <button mat-fab color="accent"(click)="onClear(story)">Clear</button>
+    </div>
+
+
+
+  <mat-card class="story-card"  *ngFor="let story of stories">
+        <mat-card-header>
+         
+          <mat-card-title class="story-card-title">{{story.Title | uppercase }}</mat-card-title>
+          
+        </mat-card-header>
+        
+        <mat-card-content class="story-card-content">
+          <p>{{story.Smallbody}}</p>
+        </mat-card-content>
+        <mat-card-actions class="story-card-actions">
+          
+          <button mat-fab color="primary"(click)="onSelect(story)">USE IT </button>
+        </mat-card-actions>
+      </mat-card>
+      <br/>
+    <div class="text-center">
+        <button mat-raised-button color="primary" (click)="analyze()" [disabled]="!text">Next</button>
+    </div>
+
+</div>

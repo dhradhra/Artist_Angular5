@@ -1,0 +1,48 @@
+@import 'variables';
+
+.message {
+    margin: 0;
+    font-size: 12px;
+    color: #f44336;
+    text-align: center;
+}
+
+.flexbin {
+    margin: 10px 0;
+
+    a {
+        margin: 5px;
+    }
+}
+
+.selected {
+    mat-form-field::ng-deep .mat-form-field-infix {
+        border: none;
+    }
+
+    img {
+        height: calc(100vh - 450px);
+    }
+}
+
+.button--back {
+    margin: 0 5px;
+}
+.two-btn {
+    position: relative;
+    right: 0;
+    width: 265px;
+    left: auto;
+    float: right;
+}
+.button--back {
+    margin: 0 5px;
+    float: right;
+    position: absolute;
+    right: 0;
+    /* left: 0; */
+}
+.button--clear {
+    position: absolute;
+    left: 0;
+}
